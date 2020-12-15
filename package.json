@@ -1,0 +1,22 @@
+{
+  "name": "health-project",
+  "version": "1.0.0",
+  "description": "Health Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cfor0/health-project.git"
+  },
+  "author": "Carlo Ortega",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cfor0/health-project/issues"
+  },
+  "homepage": "https://github.com/Cfor0/health-project#readme",
+  "dependencies": {
+    "sass": "^1.30.0"
+  }
+}
