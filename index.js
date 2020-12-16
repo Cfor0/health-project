@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 
+require('dotenv').config();
+const apiKey = process.env.APIKEY;
+
 
 const app = express();
 
@@ -19,30 +22,30 @@ app.get('/', (req, res) => {
 
 // Spoontacular API
 
-// const options = {
-//     method: 'GET',
-//     url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search',
-//     qs: {
-//       query: 'chicken',
-//       diet: 'vegetarian',
-//       excludeIngredients: '',
-//       intolerances: '',
-//       number: '5',
-//       offset: '0',
-//       type: 'main course'
-//     },
-//     headers: {
-//       'x-rapidapi-key': '37d6abfe30mshd5a6f8b834152f9p1f3cb2jsnd01c138109bf',
-//       'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-//       useQueryString: true
-//     }
-//   };
+const options = {
+    method: 'GET',
+    url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search',
+    qs: {
+      query: 'chicken',
+      diet: 'vegetarian',
+      excludeIngredients: '',
+      intolerances: '',
+      number: '5',
+      offset: '0',
+      type: 'main course'
+    },
+    headers: {
+      'x-rapidapi-key': apiKey,
+      'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+      useQueryString: true
+    }
+  };
   
-//   request(options, function (error, response, body) {
-//       if (error) throw new Error(error);
+  request(options, function (error, response, body) {
+      if (error) throw new Error(error);
   
-//       console.log(body);
-//   });
+      console.log(body);
+  });
 
 
 
