@@ -25,8 +25,8 @@ app.get('/', (req, res) => {
 
 // Get the targeted client search
 app.get('/search', (req, res) => {
-  let query = req.body.userInput;
-  console.log(query)
+  let query = 'tacos';
+  // console.log(query)
   const options = {
     method: 'GET',
     url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search',
@@ -35,7 +35,7 @@ app.get('/search', (req, res) => {
       diet: 'vegetarian',
       excludeIngredients: '',
       intolerances: '',
-      number: '1',
+      number: '2',
       offset: '0',
       type: 'main course'
     },
@@ -56,8 +56,16 @@ app.get('/search', (req, res) => {
         res.render('index');
         res.send('No data found').status(404)
       } else {
-        
-         appendData(data);
+        console.log(data)
+        let title = [];
+        for (var i = 0; i < data.results.length; i++) {
+
+          title.push(data.results[i].title);
+
+        }
+        console.log(title)
+        // res.render('index', {})
+        // appendData(data);
       }
     }
 
@@ -65,10 +73,18 @@ app.get('/search', (req, res) => {
   });
 })
 
-const appendData = (data) => {
-  console.log(data.results[0].title)
-}
+// const appendData = (data) => {
+//   const res = data.results;
+//   // var mainContainer = document.getElementById("myData");
+//   // for (var i = 0; i < res.length; i++) {
+//   //   var div = document.createElement("div");
+//   //   div.innerHTML = 'Name: ' + res[i].title;
+//   //   mainContainer.appendChild(div);
+//   //   // console.log(data.results[0])
+//   // }
 
+//   console.log(res)
+// }
 
 
 
