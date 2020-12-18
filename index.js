@@ -12,9 +12,9 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
-app.engine('html', require('ejs').renderFile);
+// app.engine('html', require('ejs').renderFile);
 app.set('views', __dirname + '/public/views');
-app.set('view engine', 'html')
+app.set('view engine', 'ejs')
 
 // Load home page
 app.get('/', (req, res) => {
@@ -32,10 +32,10 @@ app.get('/search', (req, res) => {
     url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search',
     qs: {
       query: query,
-      diet: 'vegetarian',
+      diet: 'vegan',
       excludeIngredients: '',
       intolerances: '',
-      number: '2',
+      number: '3',
       offset: '0',
       type: 'main course'
     },
@@ -48,43 +48,34 @@ app.get('/search', (req, res) => {
 
   request(options, function (error, response, body) {
     if (error) {
-      res.render('index')
-      res.send('Bad request').status(400)
-    } else {
+      res.render('index', { title: null, error: 'No data found' });
+      res.status(404)
+    }
+    else {
       let data = JSON.parse(body);
-      if (data == undefined || data == null) {
-        res.render('index');
-        res.send('No data found').status(404)
+
+      if (data == undefined || data.results == null) {
+        res.render('index', { title: null, error: 'No data found' });
+        res.status(404)
       } else {
-        console.log(data)
-        let title = [];
-        for (var i = 0; i < data.results.length; i++) {
+        // let titleData = data.results;
+      
+        let titleText = `Recipe name: ${data.results[0].title}`;
+        let titleText2 = `Recipe name: ${data.results[1].title}`;
+        let titleText3 = `Recipe name: ${data.results[2].title}`;
+        res.render('index', { title: titleText, title2: titleText2, title3: titleText3, error: null })
+        // res.render('index', { title2: titleText2, error: null })
+        // res.render('index', { title3: titleText3, error: null })
+        // data.results.forEach(ele => {
 
-          title.push(data.results[i].title);
+        //   console.log(ele.title)
+        // });
 
-        }
-        console.log(title)
-        // res.render('index', {})
-        // appendData(data);
       }
     }
-
-    // console.log(body);
   });
 })
 
-// const appendData = (data) => {
-//   const res = data.results;
-//   // var mainContainer = document.getElementById("myData");
-//   // for (var i = 0; i < res.length; i++) {
-//   //   var div = document.createElement("div");
-//   //   div.innerHTML = 'Name: ' + res[i].title;
-//   //   mainContainer.appendChild(div);
-//   //   // console.log(data.results[0])
-//   // }
-
-//   console.log(res)
-// }
 
 
 
