@@ -82,6 +82,22 @@
   color: #fdfdfb;
   margin-bottom: 0;
 
+
 }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  /* Style all font awesome icons */
+/* .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+} */
+
 
 /*# sourceMappingURL=main.css.map */
