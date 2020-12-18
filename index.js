@@ -15,24 +15,28 @@ app.use(express.static('public'));
 // app.engine('html', require('ejs').renderFile);
 app.set('views', __dirname + '/public/views');
 app.set('view engine', 'ejs')
+app.use(express.json())
 
 // Load home page
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { title: null, title2: null, title3: null, error: null });
 })
 
 // Spoontacular API
 
 // Get the targeted client search
 app.get('/search', (req, res) => {
-  let query = 'tacos';
-  // console.log(query)
+  let query = req.body;
+  console.log(query)
+  let diet = req.body.vOv;
+  console.log(diet)
+
   const options = {
     method: 'GET',
     url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search',
     qs: {
       query: query,
-      diet: 'vegan',
+      diet: diet,
       excludeIngredients: '',
       intolerances: '',
       number: '3',
@@ -59,7 +63,7 @@ app.get('/search', (req, res) => {
         res.status(404)
       } else {
         // let titleData = data.results;
-      
+
         let titleText = `Recipe name: ${data.results[0].title}`;
         let titleText2 = `Recipe name: ${data.results[1].title}`;
         let titleText3 = `Recipe name: ${data.results[2].title}`;
