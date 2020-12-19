@@ -2,47 +2,88 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 
+require('dotenv').config();
+const apiKey = process.env.APIKEY;
+
 
 const app = express();
 
 
 
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(express.static('public'));
-app.engine('html', require('ejs').renderFile);
-app.set('views', __dirname + '/public/views');
-app.set('view engine', 'html')
 
+app.use(express.static('public'));
+// app.engine('html', require('ejs').renderFile);
+app.set('views', __dirname + '/public/views');
+app.set('view engine', 'ejs')
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Load home page
 app.get('/', (req, res) => {
-    res.render('index');
+  res.render('index', { title: null, title2: null, title3: null, url: null, url2: null, url3: null, error: null });
 })
 
 // Spoontacular API
 
-// const options = {
-//     method: 'GET',
-//     url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search',
-//     qs: {
-//       query: 'chicken',
-//       diet: 'vegetarian',
-//       excludeIngredients: '',
-//       intolerances: '',
-//       number: '5',
-//       offset: '0',
-//       type: 'main course'
-//     },
-//     headers: {
-//       'x-rapidapi-key': '37d6abfe30mshd5a6f8b834152f9p1f3cb2jsnd01c138109bf',
-//       'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-//       useQueryString: true
-//     }
-//   };
-  
-//   request(options, function (error, response, body) {
-//       if (error) throw new Error(error);
-  
-//       console.log(body);
-//   });
+// Get the targeted client search
+app.get('/search', (req, res) => {
+  let query = req.query.userInput;
+  console.log(query)
+  let diet = req.query.vOv;
+  console.log(diet)
+
+  const options = {
+    method: 'GET',
+    url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search',
+    qs: {
+      query: query,
+      diet: diet,
+      excludeIngredients: '',
+      intolerances: '',
+      number: '3',
+      offset: '0',
+      type: 'main course'
+    },
+    headers: {
+      'x-rapidapi-key': apiKey,
+      'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+      useQueryString: true
+    }
+  };
+
+  request(options, function (error, response, body) {
+    if (error) {
+      res.render('index', { title: null, error: 'No data found' });
+      res.status(404)
+    }
+    else {
+      let data = JSON.parse(body);
+      console.log(data.results[0])
+      if (data == undefined || data.results == null) {
+        res.render('index', { title: null, error: 'No data found' });
+        res.status(404)
+      } else {
+        // let titleData = data.results;
+
+          let titleText = `Recipe name: ${data.results[0].title}`;
+          let titleText2 = `Recipe name: ${data.results[1].title}`;
+          let titleText3 = `Recipe name: ${data.results[2].title}`;
+
+          let urlText = `Website: ${data.results[0].sourceUrl}`;
+          let urlText2 = `Website: ${data.results[1].sourceUrl}`;
+          let urlText3 = `Website: ${data.results[2].sourceUrl}`;
+          res.render('index', { title: titleText, title2: titleText2, title3: titleText3, url: urlText, url2: urlText2, url3: urlText3, error: null })
+        // res.render('index', { title2: titleText2, error: null })
+        // res.render('index', { title3: titleText3, error: null })
+        // data.results.forEach(ele => {
+
+        //   console.log(ele.title)
+        // });
+
+      }
+    }
+  });
+})
 
 
 
@@ -51,5 +92,5 @@ app.get('/', (req, res) => {
 const PORT = 8080;
 
 app.listen(PORT, () => {
-    console.log(`App is running on server ${PORT}`)
+  console.log(`App is running on server ${PORT}`)
 })
