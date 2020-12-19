@@ -36,7 +36,7 @@
     <br>
     <div class="api-section">
         <fieldset>
-          
+
             <div class="results">
                 <form action="/search" method="GET">
                     <div class="form">
@@ -49,31 +49,36 @@
                         <input type="submit" class="ghost-button" value="Get Your Recipes!">
                     </div>
                 </form>
-                
-                <% if(title){ %>
-                <p><%= title %></p>
-                <p> <a href="<%= url %>" role="button">Check the recipe here!</a></p>
-                <% } %>
-                
-                
 
-                <% if(title2){ %>
-                <p><%= title2 %></p>
-                <p> <a href="<%= url2 %>" role="button">Check the recipe here!</a></p>
+                <div class="recipe-container">
+                    <% if(title){ %>
+                    <p><%= title %></p>
+                    <p><%= readyTime %></p>
+                    <p> <a href="<%= url %>" role="button">Check the recipe here!</a></p>
+                    <% } %>
+                </div>
 
-                <% } %>
+                <div class="recipe-container">
+                    <% if(title2){ %>
+                    <p><%= title2 %></p>
+                    <p><%= readyTime2 %></p>
+                    <p> <a href="<%= url2 %>" role="button">Check the recipe here!</a></p>
+                    <% } %>
+                </div>
 
+                <div class="recipe-container"></div>
                 <% if(title3){ %>
                 <p><%= title3 %></p>
+                <p><%= readyTime3 %></p>
                 <p> <a href="<%= url3 %>" role="button">Check the recipe here!</a></p>
-
-                <% } %>
-
-                <% if(error){ %>
-                <p><%= error %></p>
                 <% } %>
             </div>
-        </fieldset>
+
+            <% if(error){ %>
+            <p><%= error %></p>
+            <% } %>
+    </div>
+    </fieldset>
     </div>
 
     <footer class="footer">

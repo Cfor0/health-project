@@ -5,11 +5,7 @@ const request = require('request');
 require('dotenv').config();
 const apiKey = process.env.APIKEY;
 
-
 const app = express();
-
-
-
 
 app.use(express.static('public'));
 // app.engine('html', require('ejs').renderFile);
@@ -20,7 +16,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Load home page
 app.get('/', (req, res) => {
-  res.render('index', { title: null, title2: null, title3: null, url: null, url2: null, url3: null, error: null });
+  res.render('index', 
+  { 
+    title: null, title2: null, title3: null, 
+    readyTime: null, readyTime2: null, readyTime3: null,
+    url: null, url2: null, url3: null, 
+    error: null 
+  });
 })
 
 // Spoontacular API
@@ -58,21 +60,35 @@ app.get('/search', (req, res) => {
     }
     else {
       let data = JSON.parse(body);
-      console.log(data.results[0])
+      // console.log(data.results[0])
       if (data == undefined || data.results == null) {
         res.render('index', { title: null, error: 'No data found' });
         res.status(404)
       } else {
         // let titleData = data.results;
 
-          let titleText = `Recipe name: ${data.results[0].title}`;
-          let titleText2 = `Recipe name: ${data.results[1].title}`;
-          let titleText3 = `Recipe name: ${data.results[2].title}`;
+        // Get the TITLE
+        let titleText = `Recipe name: ${data.results[0].title}`;
+        let titleText2 = `Recipe name: ${data.results[1].title}`;
+        let titleText3 = `Recipe name: ${data.results[2].title}`;
 
-          let urlText = `${data.results[0].sourceUrl}`;
-          let urlText2 = `${data.results[1].sourceUrl}`;
-          let urlText3 = `${data.results[2].sourceUrl}`;
-          res.render('index', { title: titleText, title2: titleText2, title3: titleText3, url: urlText, url2: urlText2, url3: urlText3, error: null })
+        // Get the TIME
+        let readyTime = ` Ready in: ${data.results[0].readyInMinutes} minutes!`;
+        let readyTime2 = `Ready in: ${data.results[1].readyInMinutes} minutes!`;
+        let readyTime3 = `Ready in: ${data.results[2].readyInMinutes} minutes!`;
+
+        // Get the URL
+        let urlText = `${data.results[0].sourceUrl}`;
+        let urlText2 = `${data.results[1].sourceUrl}`;
+        let urlText3 = `${data.results[2].sourceUrl}`;
+        
+        res.render('index',
+          {
+            title: titleText, title2: titleText2, title3: titleText3,
+            readyTime: readyTime, readyTime2: readyTime2, readyTime3: readyTime3,
+            url: urlText, url2: urlText2, url3: urlText3,
+            error: null
+          })
         // res.render('index', { title2: titleText2, error: null })
         // res.render('index', { title3: titleText3, error: null })
         // data.results.forEach(ele => {
