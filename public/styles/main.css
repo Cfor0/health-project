@@ -3,7 +3,8 @@
 
   background-color: white;
   margin: 0;
-  height: 100%;
+  padding: 0;
+  /* height: 100%; */
  
 }
 .hero-image{
@@ -14,6 +15,7 @@
   background-size: cover;
   height: 450px;
   overflow: hidden;
+
 }
 .hero-text h1, h2{
   color:rgba(255, 255, 255, 0.87);
@@ -24,6 +26,21 @@
   padding-top: 10px;
 }
 
+/* .logo {
+  width: 46px;
+  margin-right: 8px;
+} */
+
+.logo{
+position: absolute;
+margin-top: 5px;
+margin-left: 10px;
+width: 100px;
+display: block;
+line-height: 0;
+
+
+}
 .navbar{
   overflow: hidden;
   background-color:#9bc3c9 ;
@@ -33,16 +50,29 @@
   margin-top: 0;
   margin-bottom: 0;
   float: center;
-  /* font-style: italic; */
+  padding-right: 5px;
+  border-bottom: 2px #9bc3c9 solid;
+  
 }
 
+.navbar li{
+list-style: none;
+float: right;
+margin-top: 0;
+height: 50px;
+line-height: 0;
+
+
+}
 .navbar a {
   float:right;
   color:white ;
   text-align: center;
   padding: 20px 20px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
+  display: block;
+  
   
 }
 .navbar a:hover {
@@ -53,6 +83,7 @@
   font-style: italic;
  
 }
+
 
 .about-us p{
 
@@ -68,6 +99,7 @@
   
 
 }
+
 .api-section p{
 
    background-color: #EEA34F;
