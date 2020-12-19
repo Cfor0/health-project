@@ -87,26 +87,41 @@
   background-color:#54a7ae;
   width: auto;
   height: 100px;
-  text-align:center;
+  text-align: right;
   color: #fdfdfb;
   margin-bottom: 0;
-
+  font-size: 15px;
 
 }
 
   .fa-facebook {
-    background: #3B5998;
+    background: #3B599800;
     color: white;
   }
 
-  /* Style all font awesome icons */
-/* .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-} */
+  .fa-twitter {
+    background: #55ACEE00;
+    color: white;
+  }
 
 
+  .fa-instagram {
+    background: #12568800;
+    color: white;
+  }
+
+  /* Style for all font awesome icons  */
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 35%;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
 /*# sourceMappingURL=main.css.map */
