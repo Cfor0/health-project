@@ -69,9 +69,9 @@ app.get('/search', (req, res) => {
           let titleText2 = `Recipe name: ${data.results[1].title}`;
           let titleText3 = `Recipe name: ${data.results[2].title}`;
 
-          let urlText = `Website: ${data.results[0].sourceUrl}`;
-          let urlText2 = `Website: ${data.results[1].sourceUrl}`;
-          let urlText3 = `Website: ${data.results[2].sourceUrl}`;
+          let urlText = `${data.results[0].sourceUrl}`;
+          let urlText2 = `${data.results[1].sourceUrl}`;
+          let urlText3 = `${data.results[2].sourceUrl}`;
           res.render('index', { title: titleText, title2: titleText2, title3: titleText3, url: urlText, url2: urlText2, url3: urlText3, error: null })
         // res.render('index', { title2: titleText2, error: null })
         // res.render('index', { title3: titleText3, error: null })
