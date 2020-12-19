@@ -36,21 +36,30 @@
     <br>
     <div class="api-section">
         <fieldset>
-            <form action="/search" method="get">
-                <input name="userInput" type="text" class="ghost-input" placeholder="Enter Food Name" required>
-                <input name="vOv" type="text" class="ghost-input" placeholder="vegan or vegetarian" required>
-                <input type="submit" class="ghost-button" value="Get Your Recipes!">
-
+            <form action="/search" method="GET">
+                <div class="form">
+                    <input name="userInput" type="text" class="ghost-input" placeholder="Enter Food Name" required>
+                    <input name="vOv" type="text" class="ghost-input" placeholder="vegan or vegetarian" required>
+                    <input type="submit" class="ghost-button" value="Get Your Recipes!">
+                </div>
             </form>
             <div class="results">
+                
                 <% if(title){ %>
                 <p><%= title %></p>
+                <p><%= url %></p>
                 <% } %>
+                
+                
+
                 <% if(title2){ %>
                 <p><%= title2 %></p>
+                <p><%= url2 %></p>
                 <% } %>
+
                 <% if(title3){ %>
                 <p><%= title3 %></p>
+                <p><%= url3 %></p>
                 <% } %>
 
                 <% if(error){ %>
