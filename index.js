@@ -60,9 +60,23 @@ app.get('/search', (req, res) => {
     }
     else {
       let data = JSON.parse(body);
-      // console.log(data.results[0])
-      if (data == undefined || data.results == null) {
+      
+      // for (let i = 0; i < data.results.length; i++) {
+        
+      // }
+
+      if (data.results[0] == undefined || data.results[0] == null) {
         res.render('index', { title: null, error: 'No data found' });
+        res.status(404)
+      } else if(data.results[1] == undefined || data.results[1] == null) {
+        let titleText = `Recipe name: ${data.results[0].title}`;
+        let readyTime = ` Ready in: ${data.results[0].readyInMinutes} minutes!`;
+        let urlText = `${data.results[0].sourceUrl}`;
+        
+        res.render('index', { title: titleText, title2: null, title3: null,
+          readyTime: readyTime, readyTime2: null, readyTime3: null,
+          url: urlText, url2: null, url3: null,
+          error: 'No data found'});
         res.status(404)
       } else {
         // let titleData = data.results;
@@ -81,7 +95,7 @@ app.get('/search', (req, res) => {
         let urlText = `${data.results[0].sourceUrl}`;
         let urlText2 = `${data.results[1].sourceUrl}`;
         let urlText3 = `${data.results[2].sourceUrl}`;
-        
+
         res.render('index',
           {
             title: titleText, title2: titleText2, title3: titleText3,
