@@ -1,9 +1,9 @@
 
 * body{
-
   background-color: white;
   margin: 0;
   padding: 0;
+  
   /* height: 100%; */
  
 }
@@ -16,6 +16,7 @@
   height: 450px;
   overflow: hidden;
 
+
 }
 .hero-text h1, h2{
   color:rgba(255, 255, 255, 0.87);
@@ -24,6 +25,7 @@
   font-size: 60px;
   font-style: italic;
   padding-top: 10px;
+ 
 }
 
 /* .logo {
@@ -31,28 +33,36 @@
   margin-right: 8px;
 } */
 
-.logo{
-position: absolute;
-margin-top: 5px;
-margin-left: 10px;
-width: 100px;
-display: block;
-line-height: 0;
+
+.logo {
+position: relative;
+width: 120px;
+margin: 0 auto;
+top: 130px;
+padding-top: 0px; 
+overflow: hidden;
+margin-bottom: 0;
 
 
 }
+
+
 .navbar{
   overflow: hidden;
   background-color:#9bc3c9 ;
   text-decoration: none;
   list-style: none;
-  height: auto;
-  margin-top: 0;
-  margin-bottom: 0;
+  height: 50%;
+  /* margin-top: 0;
+  margin-bottom: 0; */
   float: center;
   padding-right: 5px;
   border-bottom: 2px #9bc3c9 solid;
+  margin:0;
+  padding-top: 0px;
   
+
+ 
 }
 
 .navbar li{
@@ -60,7 +70,9 @@ list-style: none;
 float: right;
 margin-top: 0;
 height: 50px;
-line-height: 0;
+line-height: 10px;
+
+
 
 
 }
@@ -73,6 +85,8 @@ line-height: 0;
   font-size: 20px;
   display: block;
   
+
+  
   
 }
 .navbar a:hover {
@@ -81,6 +95,8 @@ line-height: 0;
   border: 1.5px solid whitesmoke;
   border-radius: 1.5px;
   font-style: italic;
+  
+
  
 }
 
@@ -98,6 +114,8 @@ line-height: 0;
   margin: auto;
   
 
+  
+
 }
 
 .api-section p{
@@ -113,6 +131,8 @@ line-height: 0;
    margin: auto;
    
 
+   
+
 }
 .footer p{
   
@@ -122,6 +142,8 @@ line-height: 0;
   text-align:center;
   color: #fdfdfb;
   margin-bottom: 0;
+ 
+
 
 
 }
