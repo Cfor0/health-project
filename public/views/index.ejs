@@ -60,7 +60,7 @@
                         <% if(title){ %>
                         <p><%= title %></p>
                         <p><%= readyTime %></p>
-                        <p> <a href="<%= url %>" role="button">Check the recipe here!</a></p>
+                        <p> <a href="<%= url %>" target="_blank" role="button">Check the recipe here!</a></p>
                         <% } %>
                     </div>
 
@@ -68,7 +68,7 @@
                         <% if(title2){ %>
                         <p><%= title2 %></p>
                         <p><%= readyTime2 %></p>
-                        <p> <a href="<%= url2 %>" role="button">Check the recipe here!</a></p>
+                        <p> <a href="<%= url2 %>" target="_blank" role="button">Check the recipe here!</a></p>
                         <% } %>
                     </div>
 
@@ -76,14 +76,16 @@
                         <% if(title3){ %>
                         <p><%= title3 %></p>
                         <p><%= readyTime3 %></p>
-                        <p> <a href="<%= url3 %>" role="button">Check the recipe here!</a></p>
+                        <p> <a href="<%= url3 %>" target="_blank" role="button">Check the recipe here!</a></p>
                         <% } %>
                     </div>
                 </div>
 
-                <% if(error){ %>
-                <p><%= error %></p>
-                <% } %>
+                <div class="recipe-container">
+                    <% if(error){ %>
+                    <p><%= error %></p>
+                    <% } %>
+                </div>
         </div>
         </fieldset>
     </div>
