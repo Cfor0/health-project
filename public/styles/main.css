@@ -1,9 +1,10 @@
 
 * body{
-
   background-color: white;
   margin: 0;
-  height: 100%;
+  padding: 0;
+  
+  /* height: 100%; */
  
 }
 .hero-image{
@@ -14,6 +15,8 @@
   background-size: cover;
   height: 450px;
   overflow: hidden;
+
+
 }
 .hero-text h1, h2{
   color:rgba(255, 255, 255, 0.87);
@@ -22,27 +25,68 @@
   font-size: 60px;
   font-style: italic;
   padding-top: 10px;
+ 
 }
+
+/* .logo {
+  width: 46px;
+  margin-right: 8px;
+} */
+
+
+.logo {
+position: relative;
+width: 120px;
+margin: 0 auto;
+top: 130px;
+padding-top: 0px; 
+overflow: hidden;
+margin-bottom: 0;
+
+
+}
+
 
 .navbar{
   overflow: hidden;
   background-color:#9bc3c9 ;
   text-decoration: none;
   list-style: none;
-  height: auto;
-  margin-top: 0;
-  margin-bottom: 0;
+  height: 50%;
+  /* margin-top: 0;
+  margin-bottom: 0; */
   float: center;
-  /* font-style: italic; */
+  padding-right: 5px;
+  border-bottom: 2px #9bc3c9 solid;
+  margin:0;
+  padding-top: 0px;
+  
+
+ 
 }
 
+.navbar li{
+list-style: none;
+float: right;
+margin-top: 0;
+height: 50px;
+line-height: 10px;
+
+
+
+
+}
 .navbar a {
   float:right;
   color:white ;
   text-align: center;
   padding: 20px 20px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
+  display: block;
+  
+
+  
   
 }
 .navbar a:hover {
@@ -51,8 +95,11 @@
   border: 1.5px solid whitesmoke;
   border-radius: 1.5px;
   font-style: italic;
+  
+
  
 }
+
 
 .about-us p{
 
@@ -67,18 +114,27 @@
   margin: auto;
   
 
+  
+
 }
+
+.api-section {
+  margin: 1em 3em;
+}
+
 .api-section p{
 
    background-color: #EEA34F;
    font-size: large;
    color: white;
    width: 50%;
-   padding: 50px;
+   padding: 5px;
    border: 25px solid #EEA34F;
-   border-radius:5px;
+   /* border-radius:5px; */
    text-align:center;
-   margin: auto;
+   /* margin: auto; */
+   
+
    
 
 }
@@ -90,6 +146,8 @@
   text-align:center;
   color: #fdfdfb;
   margin-bottom: 0;
+ 
+
 
 
 }
@@ -110,3 +168,28 @@
 
 
 /*# sourceMappingURL=main.css.map */
+
+
+/* Form styling */
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form label {
+  margin: 10px;
+}
+
+.form input {
+  margin: 2px;
+}
+.recipe-container {
+  padding: 0;
+  margin: auto;
+  display: flex;
+}
+
+.recipe-container a {
+  text-decoration: none;
+  color: white;
+}
