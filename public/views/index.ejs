@@ -11,98 +11,101 @@
 
 <body>
 
-    <div> 
-     
- 
+    <div>
 
-    <ul class="navbar">
-        <li><a href="aboutus.html">Learn More</a></li>
-        <li><a href="index.html">Vegipe</a></li>
-    </ul>
 
-    <div class="hero-image" src="../images/hero.jpg">
-        <section class="hero-text">
-            <h1>Vegipe</h1>
-            <h2>Vegetarian and Vegan Recipes</h2>
-        </section>
 
-    </div>
-    <br>
-    <div class="about-us">
+        <ul class="navbar">
+            <li><a href="aboutus.html">Learn More</a></li>
+            <li><a href="index.html">Vegipe</a></li>
+        </ul>
 
-        <p> <br> The mission of <i>Vegipe</i> is to create a platform for people to get vegetarian and vegan options for
-            some of their favorite unhealthy guilty pleasures.<br>We know that it can be hard to find healthy foods that
-            taste great but <i>Vegipe</i> makes it possible
-            and accessible to everyone!<br>
-        </p>
+        <div class="hero-image" src="../images/hero.jpg">
+            <section class="hero-text">
+                <h1>Vegipe</h1>
+                <h2>Vegetarian and Vegan Recipes</h2>
+            </section>
 
-    </div>
-    <br>
-    <div class="api-section">
-        <fieldset>
+        </div>
+        <br>
+        <div class="about-us">
 
-            <div class="results">
-                <form action="/search" method="GET">
-                    <div class="form">
-                        <label for="userInput">What kind of recipe do you want?</label>
-                        <input name="userInput" type="text" class="ghost-input" placeholder="ex: tacos" required>
-                        <br>
-                        <label for="vOv">Vegan or Vegetarian?</label>
-                        <input name="vOv" type="text" class="ghost-input" placeholder="" required>
-                        <br>
-                        <input type="submit" class="ghost-button" value="Get Your Recipes!">
+            <p> <br> The mission of <i>Vegipe</i> is to create a platform for people to get vegetarian and vegan options
+                for
+                some of their favorite unhealthy guilty pleasures.<br>We know that it can be hard to find healthy foods
+                that
+                taste great but <i>Vegipe</i> makes it possible
+                and accessible to everyone!<br>
+            </p>
+
+        </div>
+        <br>
+        <div class="api-section">
+            <fieldset>
+
+                <div class="results">
+                    <form action="/search" method="GET">
+                        <div class="form">
+                            <label for="userInput">What kind of recipe do you want?</label>
+                            <input name="userInput" type="text" class="ghost-input" placeholder="ex: tacos" required>
+                            <br>
+                            <label for="vOv">Vegan or Vegetarian?</label>
+                            <input name="vOv" type="text" class="ghost-input" placeholder="" required>
+                            <br>
+                            <input class="submit" type="submit" class="ghost-button" value="Get Your Recipes!">
+                        </div>
+                    </form>
+
+                    <div class="recipe-container">
+                        <% if(title){ %>
+                        <p><%= title %></p>
+                        <p><%= readyTime %></p>
+                        <p> <a href="<%= url %>" role="button">Check the recipe here!</a></p>
+                        <% } %>
                     </div>
-                </form>
 
-                <div class="recipe-container">
-                    <% if(title){ %>
-                    <p><%= title %></p>
-                    <p><%= readyTime %></p>
-                    <p> <a href="<%= url %>" role="button">Check the recipe here!</a></p>
-                    <% } %>
+                    <div class="recipe-container">
+                        <% if(title2){ %>
+                        <p><%= title2 %></p>
+                        <p><%= readyTime2 %></p>
+                        <p> <a href="<%= url2 %>" role="button">Check the recipe here!</a></p>
+                        <% } %>
+                    </div>
+
+                    <div class="recipe-container">
+                        <% if(title3){ %>
+                        <p><%= title3 %></p>
+                        <p><%= readyTime3 %></p>
+                        <p> <a href="<%= url3 %>" role="button">Check the recipe here!</a></p>
+                        <% } %>
+                    </div>
                 </div>
 
-                <div class="recipe-container">
-                    <% if(title2){ %>
-                    <p><%= title2 %></p>
-                    <p><%= readyTime2 %></p>
-                    <p> <a href="<%= url2 %>" role="button">Check the recipe here!</a></p>
-                    <% } %>
-                </div>
-
-                <div class="recipe-container"></div>
-                <% if(title3){ %>
-                <p><%= title3 %></p>
-                <p><%= readyTime3 %></p>
-                <p> <a href="<%= url3 %>" role="button">Check the recipe here!</a></p>
+                <% if(error){ %>
+                <p><%= error %></p>
                 <% } %>
-            </div>
-
-            <% if(error){ %>
-            <p><%= error %></p>
-            <% } %>
-    </div>
-    </fieldset>
+        </div>
+        </fieldset>
     </div>
 
     <footer class="footer">
 
         <div class="logo_div">
-            <img class="logo"src="../images/logo.png" alt="our logo">
-                </div> 
+            <img class="logo" src="../images/logo.png" alt="our logo">
+        </div>
         <p>&#169; Vegipe
 
-        
+
             <a href="https://www.twitter.com/" target="_blank" rel="noopener"><i class="fa fa-twitter"></i>
             </a>
             <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i>
             </a>
             <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"> </i>
             </a>
-            
+
         </p>
 
-  
+
 
     </footer>
 

@@ -118,17 +118,21 @@ line-height: 10px;
 
 }
 
+.api-section {
+  margin: 1em 3em;
+}
+
 .api-section p{
 
    background-color: #EEA34F;
    font-size: large;
    color: white;
    width: 50%;
-   padding: 50px;
+   padding: 5px;
    border: 25px solid #EEA34F;
-   border-radius:5px;
+   /* border-radius:5px; */
    text-align:center;
-   margin: auto;
+   /* margin: auto; */
    
 
    
@@ -164,3 +168,27 @@ line-height: 10px;
 
 
 /*# sourceMappingURL=main.css.map */
+
+
+/* Form styling */
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form label {
+  margin: 10px;
+}
+
+.form input {
+  margin: 2px;
+}
+.recipe-container {
+  padding: 0;
+  margin: auto;
+  display: flex;
+}
+
+.recipe-container a {
+  text-decoration: none;
+}
