@@ -284,3 +284,9 @@ line-height: 10px;
 .section2 {
   font-size: 22px;
 }
+
+.recipe-container .vOv-api {
+  justify-content: center;
+  font-style: italic;
+  width: 100%;
+}
