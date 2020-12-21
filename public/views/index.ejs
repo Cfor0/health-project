@@ -36,39 +36,49 @@
     <br>
     <div class="api-section">
         <fieldset>
-          
+
             <div class="results">
                 <form action="/search" method="GET">
                     <div class="form">
-                        <input name="userInput" type="text" class="ghost-input" placeholder="Enter Food Name" required>
-                        <input name="vOv" type="text" class="ghost-input" placeholder="vegan or vegetarian" required>
+                        <label for="userInput">What kind of recipe do you want?</label>
+                        <input name="userInput" type="text" class="ghost-input" placeholder="ex: tacos" required>
+                        <br>
+                        <label for="vOv">Vegan or Vegetarian?</label>
+                        <input name="vOv" type="text" class="ghost-input" placeholder="" required>
+                        <br>
                         <input type="submit" class="ghost-button" value="Get Your Recipes!">
                     </div>
                 </form>
-                <!-- used ejs file to output API response  -->
-                
-                <% if(title){ %>
-                <p><%= title %></p>
-                <p><%= url %></p>
-                <% } %>
-                
-                
 
-                <% if(title2){ %>
-                <p><%= title2 %></p>
-                <p><%= url2 %></p>
-                <% } %>
+                <div class="recipe-container">
+                    <% if(title){ %>
+                    <p><%= title %></p>
+                    <p><%= readyTime %></p>
+                    <p> <a href="<%= url %>" role="button">Check the recipe here!</a></p>
+                    <% } %>
+                </div>
 
+                <div class="recipe-container">
+                    <% if(title2){ %>
+                    <p><%= title2 %></p>
+                    <p><%= readyTime2 %></p>
+                    <p> <a href="<%= url2 %>" role="button">Check the recipe here!</a></p>
+                    <% } %>
+                </div>
+
+                <div class="recipe-container"></div>
                 <% if(title3){ %>
                 <p><%= title3 %></p>
-                <p><%= url3 %></p>
-                <% } %>
-
-                <% if(error){ %>
-                <p><%= error %></p>
+                <p><%= readyTime3 %></p>
+                <p> <a href="<%= url3 %>" role="button">Check the recipe here!</a></p>
                 <% } %>
             </div>
-        </fieldset>
+
+            <% if(error){ %>
+            <p><%= error %></p>
+            <% } %>
+    </div>
+    </fieldset>
     </div>
 
     <footer class="footer">
