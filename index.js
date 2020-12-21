@@ -75,8 +75,8 @@ app.get('/search', (req, res) => {
           });
         res.status(404)
       } else if (data.results[1] == undefined || data.results[1] == null) {
-        let titleText = `Recipe name: ${data.results[0].title}`;
-        let readyTime = ` Ready in: ${data.results[0].readyInMinutes} minutes!`;
+        let titleText = `${data.results[0].title}`;
+        let readyTime = `${data.results[0].readyInMinutes} minutes!`;
         let urlText = `${data.results[0].sourceUrl}`;
 
         res.render('index',
@@ -88,12 +88,12 @@ app.get('/search', (req, res) => {
           });
         res.status(200)
       } else if (data.results[2] == undefined || data.results[2] == null) {
-        let titleText = `Recipe name: ${data.results[0].title}`;
-        let readyTime = ` Ready in: ${data.results[0].readyInMinutes} minutes!`;
+        let titleText = `${data.results[0].title}`;
+        let readyTime = `${data.results[0].readyInMinutes} minutes!`;
         let urlText = `${data.results[0].sourceUrl}`;
 
-        let titleText2 = `Recipe name: ${data.results[1].title}`;
-        let readyTime2 = ` Ready in: ${data.results[1].readyInMinutes} minutes!`;
+        let titleText2 = `${data.results[1].title}`;
+        let readyTime2 = `${data.results[1].readyInMinutes} minutes!`;
         let urlText2 = `${data.results[1].sourceUrl}`;
 
         res.render('index',
@@ -108,14 +108,14 @@ app.get('/search', (req, res) => {
         // let titleData = data.results;
 
         // Get the TITLE
-        let titleText = `Recipe name: ${data.results[0].title}`;
-        let titleText2 = `Recipe name: ${data.results[1].title}`;
-        let titleText3 = `Recipe name: ${data.results[2].title}`;
+        let titleText = `${data.results[0].title}`;
+        let titleText2 = `${data.results[1].title}`;
+        let titleText3 = `${data.results[2].title}`;
 
         // Get the TIME
-        let readyTime = ` Ready in: ${data.results[0].readyInMinutes} minutes!`;
-        let readyTime2 = `Ready in: ${data.results[1].readyInMinutes} minutes!`;
-        let readyTime3 = `Ready in: ${data.results[2].readyInMinutes} minutes!`;
+        let readyTime = `${data.results[0].readyInMinutes} minutes!`;
+        let readyTime2 = `${data.results[1].readyInMinutes} minutes!`;
+        let readyTime3 = `${data.results[2].readyInMinutes} minutes!`;
 
         // Get the URL
         let urlText = `${data.results[0].sourceUrl}`;

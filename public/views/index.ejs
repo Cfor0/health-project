@@ -15,10 +15,10 @@
 
 
 
-        <ul class="navbar">
+        <!-- <ul class="navbar">
             <li><a href="aboutus.html">Learn More</a></li>
             <li><a href="index.html">Vegipe</a></li>
-        </ul>
+        </ul> -->
 
         <div class="hero-image" src="../images/hero.jpg">
             <section class="hero-text">
@@ -40,54 +40,54 @@
 
         </div>
         <br>
-        <div class="api-section">
-            <fieldset>
+        <div class="api-section form-image">
 
-                <div class="results">
-                    <form action="/search" method="GET">
-                        <div class="form">
-                            <label for="userInput">What kind of recipe do you want?</label>
-                            <input name="userInput" type="text" class="ghost-input" placeholder="ex: tacos" required>
-                            <br>
-                            <label for="vOv">Vegan or Vegetarian?</label>
-                            <input name="vOv" type="text" class="ghost-input" placeholder="" required>
-                            <br>
-                            <input class="submit" type="submit" class="ghost-button" value="Get Your Recipes!">
-                        </div>
-                    </form>
 
-                    <div class="recipe-container">
-                        <% if(title){ %>
-                        <p><%= title %></p>
-                        <p><%= readyTime %></p>
-                        <p> <a href="<%= url %>" target="_blank" role="button">Check the recipe here!</a></p>
-                        <% } %>
+            <div class="results">
+                <form action="/search" method="GET">
+                    <div class="form">
+                        <label for="userInput"><span class="api-title">What kind of recipe do you want?</span></label>
+                        <input name="userInput" type="text" class="ghost-input" placeholder="ex: tacos" required>
+                        <br>
+                        <label for="vOv"><span class="api-title">Vegan or Vegetarian?</span></label>
+                        <input name="vOv" type="text" class="ghost-input" placeholder="" required>
+                        <br>
+                        <input class="submit" type="submit" class="ghost-button" value="Get Your Recipes!">
                     </div>
+                </form>
 
-                    <div class="recipe-container">
-                        <% if(title2){ %>
-                        <p><%= title2 %></p>
-                        <p><%= readyTime2 %></p>
-                        <p> <a href="<%= url2 %>" target="_blank" role="button">Check the recipe here!</a></p>
-                        <% } %>
-                    </div>
-
-                    <div class="recipe-container">
-                        <% if(title3){ %>
-                        <p><%= title3 %></p>
-                        <p><%= readyTime3 %></p>
-                        <p> <a href="<%= url3 %>" target="_blank" role="button">Check the recipe here!</a></p>
-                        <% } %>
-                    </div>
+                <div class="recipe-container">
+                    <% if(title){ %>
+                    <p><span class="api-title">Recipe Name: </span><%= title %></p>
+                    <p><span class="api-title">Ready in: </span><%= readyTime %></p>
+                    <p> <a href="<%= url %>" target="_blank" role="button">Check the recipe here!</a></p>
+                    <% } %>
                 </div>
 
                 <div class="recipe-container">
-                    <% if(error){ %>
-                    <p><%= error %></p>
+                    <% if(title2){ %>
+                    <p><span class="api-title">Recipe Name: </span><%= title2 %></p>
+                    <p><span class="api-title">Ready in: </span><%= readyTime2 %></p>
+                    <p> <a href="<%= url2 %>" target="_blank" role="button">Check the recipe here!</a></p>
                     <% } %>
                 </div>
+
+                <div class="recipe-container">
+                    <% if(title3){ %>
+                    <p><span class="api-title">Recipe Name: </span><%= title3 %></p>
+                    <p><span class="api-title">Ready in: </span><%= readyTime3 %></p>
+                    <p> <a href="<%= url3 %>" target="_blank" role="button">Check the recipe here!</a></p>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="recipe-container">
+                <% if(error){ %>
+                <p><%= error %></p>
+                <% } %>
+            </div>
         </div>
-        </fieldset>
+
     </div>
 
     <footer class="footer">
