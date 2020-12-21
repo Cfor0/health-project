@@ -8,11 +8,11 @@ When all of the dependices installed, run the server by typing "node index.js" i
 # **How to stop the Vegipe app**
 If you find the recipes you want to stop using the app, and want to use it on another day. type "ctrl + C" at the same time if you don't know ctrl means hit "Control + C'' at the same time.
 # **How to use the Vegipe App**
-On the query you type anytime of food that you want to cook for example chicken. Then you type what kind of diet only vegan and vegetarian diet. Then type how many servings of the recipes then. how many recipes suggestions you want and for type is asking you what type of coure like entrie, main course , desserts, etc.
+On the query you type anytime of food that you want to cook for example chicken. Then you type what kind of diet only vegan and vegetarian diet. How many recipes suggestions you want and for type is asking you what type of coure like entree, main course , desserts, etc.
 # **What language we use to build the app**
 1.Html
 
-2.CSS/SCSS
+2.CSS
 
 3.JavaScript
 
