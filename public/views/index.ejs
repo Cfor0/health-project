@@ -11,79 +11,108 @@
 
 <body>
 
-    <ul class="navbar">
-        <li><a href="aboutus.html">Learn More</a></li>
-        <li><a href="index.html">Vegipe</a></li>
-    </ul>
+    <div>
 
-    <div class="hero-image" src="../images/hero.jpg">
-        <section class="hero-text">
-            <h1>Vegipe</h1>
-            <h2>Vegetarian and Vegan Recipes</h2>
-        </section>
 
-    </div>
-    <br>
-    <div class="about-us">
 
-        <p> <br> The mission of <i>Vegipe</i> is to create a platform for people to get vegetarian and vegan options for
-            some of their favorite unhealthy guilty pleasures.<br>We know that it can be hard to find healthy foods that
-            taste great but <i>Vegipe</i> makes it possible
-            and accessible to everyone!<br>
-        </p>
+        <!-- <ul class="navbar">
+            <li><a href="aboutus.html">Learn More</a></li>
+            <li><a href="index.html">Vegipe</a></li>
+        </ul> -->
 
-    </div>
-    <br>
-    <div class="api-section">
-        <fieldset>
+        <div class="hero-image" src="../images/hero.jpg">
+            <section class="hero-text">
+                <h1>Vegipe</h1>
+                <h2>Vegetarian and Vegan Recipes</h2>
+            </section>
+
+        </div>
+        <br>
+        <div class="about-us">
+            <h2>Mission Statement</h2>
+            <p class="mission"> Creating a platform for people to get vegetarian and vegan options
+                for
+                some of their favorite unhealthy guilty pleasures
+            </p>
+
+        </div>
+        <br>
+        <div class="api-section form-image">
+
 
             <div class="results">
                 <form action="/search" method="GET">
                     <div class="form">
-                        <label for="userInput">What kind of recipe do you want?</label>
+                        <label for="userInput"><span class="form-title">What kind of recipe do you want?</span></label>
                         <input name="userInput" type="text" class="ghost-input" placeholder="ex: tacos" required>
                         <br>
-                        <label for="vOv">Vegan or Vegetarian?</label>
+                        <label for="vOv"><span class="form-title">Vegan or Vegetarian?</span></label>
                         <input name="vOv" type="text" class="ghost-input" placeholder="" required>
                         <br>
-                        <input type="submit" class="ghost-button" value="Get Your Recipes!">
+                        <input class="submit" type="submit" class="ghost-button" value="Get Your Recipes!">
                     </div>
                 </form>
 
                 <div class="recipe-container">
                     <% if(title){ %>
-                    <p><%= title %></p>
-                    <p><%= readyTime %></p>
-                    <p> <a href="<%= url %>" role="button">Check the recipe here!</a></p>
+                    <p><span class="api-title">Recipe Name: </span><%= title %></p>
+                    <p><span class="api-title">Ready in: </span><%= readyTime %></p>
+                    <p> <a href="<%= url %>" target="_blank" role="button">Check the recipe here!</a></p>
                     <% } %>
                 </div>
 
                 <div class="recipe-container">
                     <% if(title2){ %>
-                    <p><%= title2 %></p>
-                    <p><%= readyTime2 %></p>
-                    <p> <a href="<%= url2 %>" role="button">Check the recipe here!</a></p>
+                    <p><span class="api-title">Recipe Name: </span><%= title2 %></p>
+                    <p><span class="api-title">Ready in: </span><%= readyTime2 %></p>
+                    <p> <a href="<%= url2 %>" target="_blank" role="button">Check the recipe here!</a></p>
                     <% } %>
                 </div>
 
-                <div class="recipe-container"></div>
-                <% if(title3){ %>
-                <p><%= title3 %></p>
-                <p><%= readyTime3 %></p>
-                <p> <a href="<%= url3 %>" role="button">Check the recipe here!</a></p>
-                <% } %>
+                <div class="recipe-container">
+                    <% if(title3){ %>
+                    <p><span class="api-title">Recipe Name: </span><%= title3 %></p>
+                    <p><span class="api-title">Ready in: </span><%= readyTime3 %></p>
+                    <p> <a href="<%= url3 %>" target="_blank" role="button">Check the recipe here!</a></p>
+                    <% } %>
+                </div>
             </div>
 
-            <% if(error){ %>
-            <p><%= error %></p>
-            <% } %>
-    </div>
-    </fieldset>
+            <div class="recipe-container">
+                <% if(error){ %>
+                <p><%= error %></p>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="about-us section2">
+            <h2>Learn More</h2>
+            <p>Founded by a group of highly motivated individuals who sought out to increase awareness in their
+                communities of healthy eating options and to show great alternatives to foods that otherwise would be
+                harmful to our body.
+
+                With impacts being felt most in black and brown communities healthy eating is a habit that needs to
+                begin with us! By making recipe alternatives free and accessible to everyone we are hoping to boost the
+                trend of healthy eating alternatives and change lives for generations to come!
+
+                Unhealthy diet and lack of physical activity are leading global risks to health.
+                A healthy diet includes Fruit, vegetables, legumes (e.g. lentils and beans), nuts and whole grains (e.g.
+                unprocessed maize, millet, oats, wheat and brown rice).
+
+                <br>We know that it can be hard to find healthy foods
+                that
+                taste great but <i>Vegipe</i> makes it possible
+                and accessible to everyone!<br>
+            </p>
+
+        </div>
     </div>
 
     <footer class="footer">
 
-
+        <div class="logo_div">
+            <img class="logo" src="../images/logo.png" alt="our logo">
+        </div>
         <p>&#169; Vegipe
 
 
@@ -95,8 +124,6 @@
             </a>
 
         </p>
-
-
 
 
 

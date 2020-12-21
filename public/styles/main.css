@@ -1,9 +1,10 @@
 
 * body{
-
-  background-color: white;
+  background-color:#E8E8E8;
   margin: 0;
-  height: 100%;
+  padding: 0;
+  
+  /* height: 100%; */
  
 }
 .hero-image{
@@ -14,6 +15,8 @@
   background-size: cover;
   height: 450px;
   overflow: hidden;
+
+
 }
 .hero-text h1, h2{
   color:rgba(255, 255, 255, 0.87);
@@ -22,27 +25,68 @@
   font-size: 60px;
   font-style: italic;
   padding-top: 10px;
+ 
 }
+
+/* .logo {
+  width: 46px;
+  margin-right: 8px;
+} */
+
+
+.logo {
+position: relative;
+width: 120px;
+margin: 0 auto;
+top: 130px;
+padding-top: 0px; 
+overflow: hidden;
+margin-bottom: 0;
+
+
+}
+
 
 .navbar{
   overflow: hidden;
   background-color:#9bc3c9 ;
   text-decoration: none;
   list-style: none;
-  height: auto;
-  margin-top: 0;
-  margin-bottom: 0;
+  height: 50%;
+  /* margin-top: 0;
+  margin-bottom: 0; */
   float: center;
-  /* font-style: italic; */
+  padding-right: 5px;
+  border-bottom: 2px #9bc3c9 solid;
+  margin:0;
+  padding-top: 0px;
+  
+
+ 
 }
 
+.navbar li{
+list-style: none;
+float: right;
+margin-top: 0;
+height: 50px;
+line-height: 10px;
+
+
+
+
+}
 .navbar a {
   float:right;
   color:white ;
   text-align: center;
   padding: 20px 20px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
+  display: block;
+  
+
+  
   
 }
 .navbar a:hover {
@@ -51,46 +95,70 @@
   border: 1.5px solid whitesmoke;
   border-radius: 1.5px;
   font-style: italic;
+  
+
  
 }
+
 
 .about-us p{
 
   background-color: #a6cdaf;
-  font-size: large;
+  /* font-size: large; */
   color: black;
   width: 50%;
   padding: 50px;
-  border: 25px solid #a6cdaf; 
+  /* border: 2px solid rgb(74, 167, 74);  */
   border-radius:5px;
   text-align:center;
   margin: auto;
+  box-shadow: 10px 10px 8px rgb(74, 167, 74);
+
   
 
 }
-.api-section p{
 
-   background-color: #EEA34F;
+.about-us h2 {
+  color: rgb(238, 163, 79);
+}
+
+.api-section {
+  /* background-color: rgb(238, 163, 79, .5); */
+  margin: 1em 3em;
+  padding: 2em;
+  /* border: 2px solid black; */
+  border-radius: 5px;
+  box-shadow: 10px 10px 8px rgba(85, 168, 175, .9);
+
+}
+
+
+.api-section p{
+  background-color:  rgb(85, 168, 175);
    font-size: large;
    color: white;
    width: 50%;
-   padding: 50px;
-   border: 25px solid #EEA34F;
-   border-radius:5px;
+   padding: 5px;
+   border: 5px solid  rgb(85, 168, 175);
+   /* border-radius:5px; */
    text-align:center;
-   margin: auto;
+   /* margin: auto; */
+   
+
    
 
 }
 .footer p{
   
-  background-color:#54a7ae;
+  background-color:rgb(85, 168, 175);
   width: auto;
   height: 100px;
   text-align: right;
   color: #fdfdfb;
   margin-bottom: 0;
-  font-size: 15px;
+ 
+
+
 
 }
 
@@ -98,11 +166,23 @@
     background: #3B599800;
     color: white;
   }
-
   .fa-twitter {
-    background: #55ACEE00;
+    background: #55ACEE;
     color: white;
   }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+  /* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+}
 
 
   .fa-instagram {
@@ -125,3 +205,82 @@
     cursor: pointer;
   }
 /*# sourceMappingURL=main.css.map */
+
+
+/* Form styling */
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:  rgb(166, 205, 175);
+  padding: 5px;
+}
+.form label {
+  margin: 10px;
+}
+
+.form input {
+  margin: 2px;
+}
+.form-title {
+  font-size: 24px;
+}
+.submit {
+  margin: 1em;
+  padding: 10px 15px;
+  border: 1px solid #a6cdaf;
+  border-radius: 5px;
+}
+.submit {
+  transition-duration: 0.4s;
+}
+
+.submit:hover {
+  background-color: #54a7ae; /* Green */
+  color: white;
+  cursor: pointer;
+}
+
+.form-image{
+  background-image:url(../images/formBackground.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
+  height: auto;
+  overflow: hidden;
+
+
+}
+
+.recipe-container {
+  padding: 0;
+  margin: 2em auto;
+  display: flex;
+  background-color:  rgb(85, 168, 175);
+}
+
+.recipe-container a {
+  text-decoration: none;
+  color: white;
+}
+
+.recipe-container a:hover {
+  font-style: italic;
+  color: black;
+}
+
+.api-title {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mission {
+  font-style: italic;
+  font-size: 24px;
+}
+
+.section2 {
+  font-size: 22px;
+}
