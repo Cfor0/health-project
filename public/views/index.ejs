@@ -76,6 +76,18 @@
                     <p> <a href="<%= url3 %>" target="_blank" role="button">Check the recipe here!</a></p>
                     <% } %>
                 </div>
+
+                <div class="recipe-container">
+                    <% if(vegan){ %>
+                    <p class="vOv-api"><%= vegan %></p>
+                    <% } %>
+                </div>
+
+                <div class="recipe-container">
+                    <% if(vegetarian){ %>
+                    <p class="vOv-api"><%= vegetarian %></p>
+                    <% } %>
+                </div>
             </div>
 
             <div class="recipe-container">

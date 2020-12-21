@@ -5,6 +5,8 @@ const request = require('request');
 require('dotenv').config();
 const apiKey = process.env.APIKEY;
 
+const internalApi = require("./public/data.json")
+
 const app = express();
 
 app.use(express.static('public'));
@@ -21,7 +23,7 @@ app.get('/', (req, res) => {
       title: null, title2: null, title3: null,
       readyTime: null, readyTime2: null, readyTime3: null,
       url: null, url2: null, url3: null,
-      error: null
+      error: null, vegan: null, vegetarian: null
     });
 })
 
@@ -61,9 +63,7 @@ app.get('/search', (req, res) => {
     else {
       let data = JSON.parse(body);
 
-      // for (let i = 0; i < data.results.length; i++) {
-
-      // }
+     
 
       if (data.results[0] == undefined || data.results[0] == null) {
         res.render('index',
@@ -122,26 +122,38 @@ app.get('/search', (req, res) => {
         let urlText2 = `${data.results[1].sourceUrl}`;
         let urlText3 = `${data.results[2].sourceUrl}`;
 
-        res.render('index',
+        // Internal API vOv
+        if (diet === "vegan") {
+          const veganApi = internalApi.vOv[0].vegan
+          console.log(veganApi)
+
+          res.render('index',
           {
             title: titleText, title2: titleText2, title3: titleText3,
             readyTime: readyTime, readyTime2: readyTime2, readyTime3: readyTime3,
             url: urlText, url2: urlText2, url3: urlText3,
-            error: null
+            error: null, vegan: veganApi, vegetarian: null
           })
-        // res.render('index', { title2: titleText2, error: null })
-        // res.render('index', { title3: titleText3, error: null })
-        // data.results.forEach(ele => {
+        } else {
+          const vegetarianApi = internalApi.vOv[1].vegetarian
 
-        //   console.log(ele.title)
-        // });
+          res.render('index',
+          {
+            title: titleText, title2: titleText2, title3: titleText3,
+            readyTime: readyTime, readyTime2: readyTime2, readyTime3: readyTime3,
+            url: urlText, url2: urlText2, url3: urlText3,
+            error: null, vegan: null, vegetarian: vegetarianApi
+          })
+        }
+
+        
 
       }
     }
   });
 })
 
-
+console.log(internalApi)
 
 
 
