@@ -1,14 +1,22 @@
 # **Hello everyone! Welcome to Vegipe**
-We have some healthy recipes for Customers who's on a vegan and vegetarian diet, and Customers who's vegan and vegetarian. We have some excellent recipes choices for you to make at Home, work, parties, and for holiday dinner.
-# **Lets Begin to Eat Healthy**
-The first thing you want to do is to clone or download this repo onto your local devices. Then download the npm modules by running "nmp i name of the module".
+We have some healthy recipes for vegan and vegetarian customers. We have some excellent recipe choices for you to make at home, work, parties, and for holiday dinner.
 
-# **Let Get to Cooking with Some Recipes**
-When all of the dependices installed, run the server by typing "node index.js" into your terminal and vist [Vegipe Recipes](http:localhost:8080) to try it out.
-# **How to stop the Vegipe app**
-If you find the recipes you want to stop using the app, and want to use it on another day. type "ctrl + C" at the same time if you don't know ctrl means hit "Control + C'' at the same time.
-# **How to use the Vegipe App**
-On the query you type anytime of food that you want to cook for example chicken. Then you type what kind of diet only vegan and vegetarian diet. How many recipes suggestions you want and for type is asking you what type of coure like entree, main course , desserts, etc.
+# **Lets Begin to Eat Healthy**
+The first thing you want to do is clone or download this repo onto your local devices. 
+Then download the npm modules by running "npm i (name of the module)".
+
+# **Lets Get to Cooking with Some Recipes**
+When all of the dependices are installed, run the server by typing "node index.js" into your terminal and vist (http:localhost:8080) on your browser to try it out.
+
+# **How to Stop the Vegipe App**
+After finding the recipes you want and want to stop using the app:
+Hit "Control + C" or "Ctrl + C" at the same time.
+
+# **How to Use the Vegipe App**
+
+On the query you input the type of food that you want to cook, for example, tacos. Then, you input what type of diet, vegan or vegetarian.
+The API will then give 3 results that include the name, amount of time it takes to cook AND a link to the recipe. Select the recipe of your choice to begin your journey to a better diet!
+
 # **What language we use to build the app**
 1.Html
 
@@ -16,7 +24,7 @@ On the query you type anytime of food that you want to cook for example chicken.
 
 3.JavaScript
 
-4.Node
+4.Node.JS
 
 # **Authors**
 * Anthony Maye Jr
