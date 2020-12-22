@@ -63,7 +63,7 @@ app.get('/search', (req, res) => {
     else {
       let data = JSON.parse(body);
 
-     
+
 
       if (data.results[0] == undefined || data.results[0] == null) {
         res.render('index',
@@ -71,7 +71,7 @@ app.get('/search', (req, res) => {
             title: null, title2: null, title3: null,
             readyTime: null, readyTime2: null, readyTime3: null,
             url: null, url2: null, url3: null,
-            error: 'No data found'
+            error: 'No data found', vegan: null, vegetarian: null
           });
         res.status(404)
       } else if (data.results[1] == undefined || data.results[1] == null) {
@@ -79,13 +79,29 @@ app.get('/search', (req, res) => {
         let readyTime = `${data.results[0].readyInMinutes} minutes!`;
         let urlText = `${data.results[0].sourceUrl}`;
 
-        res.render('index',
-          {
-            title: titleText, title2: null, title3: null,
+        if (diet === "vegan") {
+          const veganApi = internalApi.vOv[0].vegan
+          console.log(veganApi)
+
+          res.render('index',
+            {
+              title: titleText, title2: null, title3: null,
+              readyTime: readyTime, readyTime2: null, readyTime3: null,
+              url: urlText, url2: null, url3: null,
+              error: 'End of list', vegan: veganApi, vegetarian: null
+            })
+        } else {
+          const vegetarianApi = internalApi.vOv[1].vegetarian
+
+          res.render('index',
+            {
+              title: titleText, title2: null, title3: null,
             readyTime: readyTime, readyTime2: null, readyTime3: null,
             url: urlText, url2: null, url3: null,
-            error: 'No data found'
-          });
+            error: 'End of list', vegan: null, vegetarian: vegetarianApi
+            })
+        }
+
         res.status(200)
       } else if (data.results[2] == undefined || data.results[2] == null) {
         let titleText = `${data.results[0].title}`;
@@ -96,13 +112,28 @@ app.get('/search', (req, res) => {
         let readyTime2 = `${data.results[1].readyInMinutes} minutes!`;
         let urlText2 = `${data.results[1].sourceUrl}`;
 
-        res.render('index',
-          {
-            title: titleText, title2: titleText2, title3: null,
+        if (diet === "vegan") {
+          const veganApi = internalApi.vOv[0].vegan
+          console.log(veganApi)
+
+          res.render('index',
+            {
+              title: titleText, title2: titleText2, title3: null,
             readyTime: readyTime, readyTime2: readyTime2, readyTime3: null,
             url: urlText, url2: urlText2, url3: null,
-            error: 'No data found'
-          });
+            error: 'No data found', vegan: veganApi, vegetarian: null
+            })
+        } else {
+          const vegetarianApi = internalApi.vOv[1].vegetarian
+
+          res.render('index',
+            {
+              title: titleText, title2: titleText2, title3: null,
+            readyTime: readyTime, readyTime2: readyTime2, readyTime3: null,
+            url: urlText, url2: urlText2, url3: null,
+            error: 'No data found', vegan: null, vegetarian: vegetarianApi
+            })
+        }
         res.status(200)
       } else {
         // let titleData = data.results;
@@ -128,32 +159,32 @@ app.get('/search', (req, res) => {
           console.log(veganApi)
 
           res.render('index',
-          {
-            title: titleText, title2: titleText2, title3: titleText3,
-            readyTime: readyTime, readyTime2: readyTime2, readyTime3: readyTime3,
-            url: urlText, url2: urlText2, url3: urlText3,
-            error: null, vegan: veganApi, vegetarian: null
-          })
+            {
+              title: titleText, title2: titleText2, title3: titleText3,
+              readyTime: readyTime, readyTime2: readyTime2, readyTime3: readyTime3,
+              url: urlText, url2: urlText2, url3: urlText3,
+              error: null, vegan: veganApi, vegetarian: null
+            })
         } else {
           const vegetarianApi = internalApi.vOv[1].vegetarian
 
           res.render('index',
-          {
-            title: titleText, title2: titleText2, title3: titleText3,
-            readyTime: readyTime, readyTime2: readyTime2, readyTime3: readyTime3,
-            url: urlText, url2: urlText2, url3: urlText3,
-            error: null, vegan: null, vegetarian: vegetarianApi
-          })
+            {
+              title: titleText, title2: titleText2, title3: titleText3,
+              readyTime: readyTime, readyTime2: readyTime2, readyTime3: readyTime3,
+              url: urlText, url2: urlText2, url3: urlText3,
+              error: null, vegan: null, vegetarian: vegetarianApi
+            })
         }
 
-        
+
 
       }
     }
   });
 })
 
-console.log(internalApi)
+
 
 
 
