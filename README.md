@@ -1,16 +1,6 @@
+![vegipe](https://user-images.githubusercontent.com/50893413/109351746-c2bb5480-7847-11eb-8b32-ebc679315b47.png)
 # **Hello everyone! Welcome to Vegipe**
-We have some healthy recipes for vegan and vegetarian customers. We have some excellent recipe choices for you to make at home, work, parties, and for holiday dinner.
-
-# **Lets Begin to Eat Healthy**
-The first thing you want to do is clone or download this repo onto your local devices. 
-Then download the npm modules by running "npm i (name of the module)".
-
-# **Lets Get to Cooking with Some Recipes**
-When all of the dependices are installed, run the server by typing "node index.js" into your terminal and vist (http:localhost:8080) on your browser to try it out.
-
-# **How to Stop the Vegipe App**
-After finding the recipes you want and want to stop using the app:
-Hit "Control + C" or "Ctrl + C" at the same time.
+We have healthy recipes for vegan and vegetarian customers. We have some excellent recipe choices for you to make at home, work, parties, and for holiday dinner.
 
 # **How to Use the Vegipe App**
 
@@ -18,13 +8,13 @@ On the query you input the type of food that you want to cook, for example, taco
 The API will then give 3 results that include the name, amount of time it takes to cook AND a link to the recipe. Select the recipe of your choice to begin your journey to a better diet!
 
 # **What language we use to build the app**
-1.Html
+1.JavaScript
 
-2.CSS
+2.Node.JS
 
-3.JavaScript
+3.CSS
 
-4.Node.JS
+4.HTML
 
 # **Authors**
 * Anthony Maye Jr
